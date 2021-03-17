@@ -29,10 +29,6 @@ class MyComponent extends HTMLElement {
         linkElement.setAttribute('href', 'components/MyComponent/MyComponent.css')
         this.shadowRoot.append(linkElement)
     }
-
-    connectedCallback(){
-        console.log('MyComponent: connectedCallback')
-    }
 }
 
 customElements.define('my-component', MyComponent)

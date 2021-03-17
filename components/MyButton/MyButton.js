@@ -1,4 +1,8 @@
 class MyButton extends HTMLElement {
+    static get observedAttributes() {
+        return ['data-text']
+    }
+
     button;
 
     constructor() {
@@ -7,6 +11,7 @@ class MyButton extends HTMLElement {
 
         // Create the UI
         this.button = document.createElement('button')
+        this.button.className = "the-button"
 
         // Attach elements to the shadow dom
         this.shadowRoot.append(this.button)
@@ -18,15 +23,12 @@ class MyButton extends HTMLElement {
         this.shadowRoot.append(linkElement)
     }
 
-    connectedCallback(){
+    connectedCallback() {
         console.log('MyButton: connectedCallback')
-        this.button.className = "the-button"
-        this.button.innerText = this.getAttribute('data-text')
     }
 
-    // TODO: Figure out why this isn't being called
-    attributeChangedCallback(name, oldValue, newValue){
-        console.log('MyButton: attributeChangedCallback')
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.button.innerText = this.getAttribute('data-text')
     }
 }
 
