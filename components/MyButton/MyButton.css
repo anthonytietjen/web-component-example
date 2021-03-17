@@ -1,0 +1,14 @@
+.the-button{
+    border-radius: 4px;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition-property: opacity;
+    transition-duration: 250ms;
+    background-color: blue;
+    border: none;
+    color: white;
+}
+
+.the-button:hover{
+    opacity: .7;
+}
