@@ -24,7 +24,8 @@ class MyButton extends HTMLElement {
         this.button.innerText = this.getAttribute('data-text')
     }
 
-    attributeChangedCallback(){
+    // TODO: Figure out why this isn't being called
+    attributeChangedCallback(name, oldValue, newValue){
         console.log('MyButton: attributeChangedCallback')
     }
 }
